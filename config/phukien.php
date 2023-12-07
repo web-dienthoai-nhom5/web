@@ -109,7 +109,7 @@
                     <div class="prt-accessory" data-htmlid="" data-cateid="" data-manuid="">
                         <div class="ajax-call" data-placeid="3662" data-max="10">
                         <div class="stage-two"><div class="load"></div>
-                        <a href="/tai-nghe" class="see-all hide"><span>Xem tất cả phụ kiện Tai nghe</span></a>
+                        <a href="tai-nghe.php" class="see-all hide"><span>Xem tất cả phụ kiện Tai nghe</span></a>
                         </div>
                     </div>
                 </aside>
@@ -173,7 +173,7 @@
                         <div class="ajax-call" data-placeid="3661" data-max="10">
                             <div class="stage-two"><div class="load"></div></div>
                         </div>
-                        <a href="/sac-cap" class="see-all hide"><span>Xem tất cả phụ kiện C&#xE1;p s&#x1EA1;c</span></a>
+                        <a href="sac-cap.php" class="see-all hide"><span>Xem tất cả phụ kiện C&#xE1;p s&#x1EA1;c</span></a>
                         <input type="hidden" class="hdf hide"/>
                     </div>
                 </aside>
