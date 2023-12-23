@@ -34,7 +34,7 @@
                 </td>    
                 <td>
                     <a href="">
-                    <img src="https://cdn.tgdd.vn/Products/Images/42/250625/samsung-galaxy-z-fold4-256gb-1.jpg" alt="" />
+                    <img src="https://cdn.tgdd.vn/Products/Images/42/285031/samsung-galaxy-z-fold-4-512gb-xanh-1.jpg" alt="" />
                     <figcaption>Điện thoại Samsung Galaxy Z Fold4 5G 512GB</figcaption>
                     <div class="discount-price">  24.990.000đ</div>
                 </td>            
