@@ -143,7 +143,7 @@
     <style>
         .samsung_product img {
             width: 100%; /* Make the images take the full width of their containers */
-            max-height: 150px; /* Limit the maximum height of the images */
+            max-height: 250px; /* Limit the maximum height of the images */
             border-radius: 8px; /* Add rounded corners to the images */
             margin-bottom: 10px; /* Add margin below the images for spacing */
         }
