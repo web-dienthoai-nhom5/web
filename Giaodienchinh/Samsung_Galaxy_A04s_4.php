@@ -2,7 +2,7 @@
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Điện thoại Samsung Galaxy A04s</h1>
+                <h1 class="st-name"> Điện thoại Samsung Galaxy A04 (4GB/64GB)</h1>
                 <br>
         </div>
         <div class="l-pd-row">
@@ -12,7 +12,7 @@
                     <div class="l-pd-left">
                         <div class="st-slider fs-sale">
                             <div class="fs-sale-border">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/283819/samsung-galaxy-a04s-xanh-1-1.jpg" alt="Samsung Galaxy A24">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/291625/samsung-galaxy-04-dong-1.jpg" alt="Samsung Galaxy A04 (4GB/64GB)">
                             </div>
                         </div>
                     </div>
@@ -21,11 +21,10 @@
                     <table>
                         <tr>
                             <td>
-                                <!-- Existing price and promotion code -->
                                 <div class="st-price__left boxprice">
-                                    <div class="st-pd-price" id="product-price-online"><h2>3.090.000đ</h2></div>
+                                    <div class="st-pd-price" id="product-price-online"><h2>2.590.000đ</h2></div>
                                     <div class='st-pd-old-price'>
-                                        <strike>3.990.000đ</strike>
+                                        <strike>3.090.000đ</strike>
                                     </div>
                                     <br>
                                 </div>
@@ -48,17 +47,6 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <br>
-                                <label for="color-select">Chọn màu sắc:</label>
-                                <select id="color-select" onchange="updatePrice()">
-                                    <option value="den">Đen</option>
-                                    <option value="nau">Nâu</option>
-                                    <option value="xanh">Xanh lá đậm</option>
-                                </select>
                             </td>
                         </tr>
                         <tr>
@@ -88,7 +76,7 @@
         // Function to handle the click event on the "Mua Ngay" button
         $(".btn-muangay").on("click", function () {
             // Retrieve product information
-            var productName = "Điện thoại Samsung Galaxy A14"; // You can replace this with dynamic data
+            var productName = "Điện thoại Samsung Galaxy A04s"; // You can replace this with dynamic data
             var productPrice = parseFloat($("#product-price-online").text().replace("đ", "").replace(",", ""));
             var productQuantity = 1; // You can set the quantity based on user input
             var productColor = $("#color-select").val();
@@ -107,30 +95,10 @@
         });
     });
 </script>
-    <script>
-        // Add this script to update the price based on selected options
-        function updatePrice() {
-            const gbSelect = document.getElementById("gb-select");
-            const colorSelect = document.getElementById("color-select");
-            const priceElement = document.getElementById("product-price-online");
-
-            // Define your price values based on GB and color options
-            const prices = {
-                "4GB-den": 3190000,
-                "4GB-xanh": 3190000,
-                "4GB-nau": 3190000,
-            };
-
-            // Generate the key based on selected options
-            const selectedKey = gbSelect.value + "-" + colorSelect.value;
-
-            // Update the price
-            priceElement.innerHTML = "<h2>" + prices[selectedKey] + "đ</h2>";
-        }
-    </script>
     <div class="g-container">
+        <div class="st-card">
         <br>
-        <h2>Thông số kỹ thuật</h2>
+        <h2 class="card-title" style="text-align:center">Thông số kỹ thuật</h2>
         <br>
         <table border="1"class="table-specs">
             <tr>
@@ -179,6 +147,7 @@
                 <td>5,000 mAh</td>
             </tr>
         </table>
+        </div>
     </div>   
     <div class="renderboxbtn">
         <h2 class="card-title" style="text-align: center">Đặc điểm nổi bật</h2>
@@ -189,7 +158,7 @@
                                                                               Trải nghiệm giải trí ổn định chip Exynos 850 8 nhân, RAM 4GB và hệ điều hành Android 12 One UI.  
                                                                                VPin trâu dùng cực lâu - Viên pin 5,000 mAh sạc nhanh 15W.
                                                                                 Lưu ý: Thanh toán trước khi mở seal.</b></p>
-                    <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A04s" id="Điện thoại Samsung Galaxy A04s" src="https://cdn.tgdd.vn/Products/Images/42/283819/samsung-galaxy-a04s-xanh-1-1.jpg" /></p>
+                    <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A04s (4GB/64GB)" id="Điện thoại Samsung Galaxy A04s_" src="https://cdn.tgdd.vn/Products/Images/42/291625/samsung-galaxy-04-dong-1.jpg" /></p>
                 </div>
                 <div>
                     <br>
