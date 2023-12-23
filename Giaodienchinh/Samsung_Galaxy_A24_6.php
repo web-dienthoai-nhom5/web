@@ -2,7 +2,7 @@
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Điện thoại Samsung Galaxy A24</h1>
+                <h1 class="st-name"> Điện thoại Samsung Galaxy A24 6GB</h1>
         </div>
         <div class="l-pd-row">
         <table width=100%>
@@ -11,7 +11,7 @@
                     <div class="l-pd-left">
                         <div class="st-slider fs-sale">
                             <div class="fs-sale-border">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/283819/samsung-galaxy-a04s-nau-1-1.jpg" alt="Samsung Galaxy A24">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/274018/samsung-galaxy-a24-den-1.jpg" alt="Samsung Galaxy A24">
                             </div>
                         </div>
                     </div>
@@ -51,26 +51,6 @@
                         </tr>
                         <tr>
                             <td>
-                                <!-- New dropdowns for GB and color selection -->
-                                <br>
-                                <label for="gb-select">Chọn dung lượng RAM:</label>
-                                <select id="gb-select" onchange="updatePrice()">
-                                    <option value="6GB">6GB</option>
-                                    <option value="8GB">8GB</option>
-                                </select>
-
-                                <br><br>
-
-                                <label for="color-select">Chọn màu sắc:</label>
-                                <select id="color-select" onchange="updatePrice()">
-                                    <option value="den">Đen</option>
-                                    <option value="xanh">Xanh lá nhạt</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <!-- Purchase button -->
                                 <br>
                                 <div class="st-pd-btn">
                                     <div class="btn btn-primary btn-xl btn--lg btn-muangay" onclick="ga('send', 'event', 'Product Detail', 'Click CTA Button', 'Mua Ngay'); handleEventTrackingClicks(39475);">
@@ -112,34 +92,11 @@
         });
     });
 </script>
-    <script>
-        // Add this script to update the price based on selected options
-        function updatePrice() {
-    const gbSelect = document.getElementById("gb-select");
-    const colorSelect = document.getElementById("color-select");
-    const priceElement = document.getElementById("product-price-online");
-    const oldPriceElement = document.querySelector(".st-pd-old-price strike");
-
-    // Define your corrected price values based on GB and color options
-    const prices = {
-        "6GB-den": { price: 5890000, oldPrice: 6490000 },
-        "6GB-xanh": { price: 5890000, oldPrice: 6490000 },
-        "8GB-den": { price: 6390000, oldPrice: 6990000 },
-        "8GB-xanh": { price: 6390000, oldPrice: 6990000 },
-    };
-
-    // Generate the key based on selected options
-    const selectedKey = gbSelect.value + "-" + colorSelect.value;
-
-    // Update the price
-    priceElement.innerHTML = "<h2>" + prices[selectedKey].price + "đ</h2>";
-
-    // Update the old price with strike-through effect
-    oldPriceElement.innerHTML = "<strike>" + prices[selectedKey].oldPrice + "đ</strike>";
-}
-    </script>
     <div class="-container">
-        <h2>Thông số kỹ thuật</h2>
+    <div class="st-card">
+        <br>
+        <h2 class="card-title" style="text-align:center">Thông số kỹ thuật</h2>
+        <br>
         <table border="1"class="table-specs">
             <tr>
                 <th>Thông số</th>
@@ -171,7 +128,7 @@
                 <td>Mediatek Helio G99(6nm)</td>
             </tr><tr>
                 <td>RAM</td>
-                <td>6GB, 8GB</td>
+                <td>6GB</td>
             </tr><tr>
                 <td>ROM</td>
                 <td>128GB</td>
@@ -180,6 +137,7 @@
                 <td>5000mAh - 25W</td>
             </tr>
         </table>
+    </div>
     </div>   
     <div class="renderboxbtn">
             <table width=100%>
@@ -194,7 +152,7 @@
                                                                                         <br> Vi xử lý MediaTek Helio G99 cung cấp hiệu năng mạnh mẽ đáp ứng mọi thao tác.
                                                                                         <br> Kéo dài hành trình sử dụng với thời lượng pin 5.000mAh.
                                                                                         <br> Lưu ý: Thanh toán trước khi mở seal.</b></p>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A24" id="Điện thoại Samsung Galaxy A24" src="https://cdn.tgdd.vn/Products/Images/42/274018/samsung-galaxy-a24-xanh-1.jpg" /></p>
+                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A24" id="Điện thoại Samsung Galaxy A24" src="https://cdn.tgdd.vn/Products/Images/42/274018/samsung-galaxy-a24-den-1.jpg" /></p>
                             </div> 
                         </div>
                     </td>           
@@ -205,17 +163,6 @@
         const divText = document.getElementById("divText");
         them.addEventListener("click", function() {
             divText.innerHTML += `
-                <table>
-                    <tr>
-                        <br>
-                        <h3 style="margin-bottom: 11px; text-align: justify;"><b>Thiết kế c&aacute; t&iacute;nh v&agrave; đơn giản</b></h3>
-                        <p style="margin-bottom: 11px; text-align: justify;">Cảm giác khi cầm hộp sạc rất vừa tay, nó nằm gọn trong lòng bàn tay mình. Khi mình sắm thêm một <br> case đựng nữa thì đây chính là một combo hoàn hảo. Mình có thể thoải mái treo móc bất kỳ đâu,<br> balo hay túi xách đều được, hơn nữa còn bảo vệ dock sạc khỏi những vết xước hoặc dấu vân tay khi <br>sử dụng. Tất nhiên, nếu không có case đựng, bạn vẫn hoàn toàn dễ dàng cất giữ và mang theo vô cùng<br> thuận tiện.
-Khi mở hộp sạc ra, mình có thể dễ dàng mở bằng một tay và nó cho mình cảm giác phần <br> bản lề chắc chắn, tiếng “tách” khi đóng hộp nghe khá vui tai.</p>
-                        <p style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Thiết kế cá tính và đơn giản 1" id="Thiết kế cá tính và đơn giản 11" src="https://cdn.tgdd.vn/Products/Images/54/286045/tai-nghe-bluetooth-true-wireless-galaxy-buds2-pro-151022-035734.jpg" /></p>
-                        <p style="margin-bottom: 11px; text-align: justify;">Trong hộp tai nghe khi mua về, mình nhận được tổng cộng 3 cặp đệm tai. Trong đó, có 1 cặp được <br> gắn sẵn lên tai nghe và 2 cặp rời đi kèm. Mỗi cặp đệm tai là một kích cỡ khác nhau, tương ứng <br> với 3 cỡ S - M - L. Do vậy, khá dễ dàng để lựa chọn được cặp đệm tai phù hợp với khuôn tai <br> của mình. Ngoài ra, khi cho bạn bè mượn cũng có thể đổi cặp đệm có kích cỡ khác vừa vặn với bạn <br> mình hơn.</p>
-                        <p style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Đệm silicon mềm mại, vừa tai 1" id="Đệm silicon mềm mại, vừa tai 11" src="https://cdn.tgdd.vn/Products/Images/54/286045/tai-nghe-bluetooth-true-wireless-galaxy-buds2-pro-151022-035731.jpg" /></p>
-                    </tr>
-                </table>
                 `;
         });
     </script> 
@@ -401,5 +348,5 @@ Khi mở hộp sạc ra, mình có thể dễ dàng mở bằng một tay và n�
                 </div>
             </div>
         </div>
-
+        <?php include "main_sp.php" ?>
         <?php include "footer.php"?>
