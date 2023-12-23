@@ -110,7 +110,10 @@ nav a:hover {
         <div class="bar">
             <nav>
                 <div class="search">
-                    <input type="text" placeholder="Tìm kiếm...">
+                    <form action="timkiem.php" method="GET">
+                        <input type="text" name="query" placeholder="Tìm kiếm...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
                 </div>
                 <a href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
                 <a href="Samsung.php"><i class="fas fa-mobile"></i> Samsung</a>
