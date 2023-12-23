@@ -2,7 +2,7 @@
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Điện thoại Samsung Galaxy A14</h1>
+                <h1 class="st-name"> Điện thoại Samsung Galaxy A14 5G</h1>
         </div>
         <div class="l-pd-row">
         <table width=100%>
@@ -11,7 +11,7 @@
                     <div class="l-pd-left">
                         <div class="st-slider fs-sale">
                             <div class="fs-sale-border">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/303579/samsung-galaxy-a14-4g-tim-1.jpg" alt="Samsung Galaxy A24">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/303579/samsung-galaxy-a14-4g-tim-1.jpg" alt="Samsung Galaxy A14 4GB">
                             </div>
                         </div>
                     </div>
@@ -22,9 +22,9 @@
                             <td>
                                 <!-- Existing price and promotion code -->
                                 <div class="st-price__left boxprice">
-                                    <div class="st-pd-price" id="product-price-online"><h2>4.490.000đ</h2></div>
+                                    <div class="st-pd-price" id="product-price-online"><h2>3.690.000đ</h2></div>
                                     <div class='st-pd-old-price'>
-                                        <strike>5.190.000đ</strike>
+                                        <strike>4.490.000đ</strike>
                                     </div>
                                     <br>
                                 </div>
@@ -40,34 +40,13 @@
                                             <td>
                                                 <ul class="st-boxPromo">
                                                     <div class='st-pd-price-saving'>
-                                                        Giảm ngay 600.000đ
+                                                        Giảm ngay 800.000đ
                                                     </div>
                                                 </ul>
                                             </td>
                                         </tr>
                                     </table>
                                 </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <!-- New dropdowns for GB and color selection -->
-                                <br>
-                                <label for="gb-select">Chọn dung lượng RAM:</label>
-                                <select id="gb-select" onchange="updatePrice()">
-                                    <option value="4GB">4GB</option>
-                                    <option value="5GB">5GB</option>
-                                    <option value="6GB">6GB</option>
-                                </select>
-
-                                <br><br>
-
-                                <label for="color-select">Chọn màu sắc:</label>
-                                <select id="color-select" onchange="updatePrice()">
-                                    <option value="den">Đen</option>
-                                    <option value="bac">Bạc</option>
-                                    <option value="do">Đỏ đô</option>
-                                </select>
                             </td>
                         </tr>
                         <tr>
@@ -114,39 +93,11 @@
         });
     });
 </script>
-    <script>
-        // Add this script to update the price based on selected options
-        function updatePrice() {
-            const gbSelect = document.getElementById("gb-select");
-            const colorSelect = document.getElementById("color-select");
-            const priceElement = document.getElementById("product-price-online");
-            const oldPriceElement = document.querySelector(".st-pd-old-price strike");
-
-            // Define your corrected price values based on GB and color options
-            const prices = {
-                "5GB-den": { price: 4490000, oldPrice: 5190000 },
-                "5GB-bac": { price: 4490000, oldPrice: 5190000 },
-                "5GB-do": { price: 4490000, oldPrice: 5190000 },
-                "6GB-den": { price: 4390000, oldPrice: 4990000 },
-                "6GB-bac": { price: 4390000, oldPrice: 4990000 },
-                "6GB-do": { price: 4390000, oldPrice: 4990000 },
-                "4GB-den": { price: 3690000, oldPrice: 4490000 },
-                "4GB-bac": { price: 3690000, oldPrice: 4490000 },
-                "4GB-do": { price: 3690000, oldPrice: 4490000 },
-            };
-
-            // Generate the key based on selected options
-            const selectedKey = gbSelect.value + "-" + colorSelect.value;
-
-            // Update the price
-            priceElement.innerHTML = "<h2>" + prices[selectedKey].price + "đ</h2>";
-
-            // Update the old price with strike-through effect
-            oldPriceElement.innerHTML = "<strike>" + prices[selectedKey].oldPrice + "đ</strike>";
-        }
-    </script>
     <div class="b-container">
-        <h2>Thông số kỹ thuật</h2>
+    <div class="st-card">
+        <br>
+        <h2 class="card-title" style="text-align:center">Thông số kỹ thuật</h2>
+        <br>
         <table border="1"class="table-specs">
             <tr>
                 <th>Thông số</th>
@@ -178,7 +129,7 @@
                 <td>MediaTek Dimensity 700</td>
             </tr><tr>
                 <td>RAM</td>
-                <td>4GB, 5GB, 6GB</td>
+                <td>4GB</td>
             </tr><tr>
                 <td>ROM</td>
                 <td>128GB</td>
@@ -187,41 +138,29 @@
                 <td>5000mAh</td>
             </tr>
         </table>
+    </div>
     </div>   
     <div class="renderboxbtn">
-            <table width=100%>
-                <tr>
-                    <td>
-                        <h2 class="card-title" style="text-align: center">Đặc điểm nổi bật</h2>
-                        <div class="card-body">
-                            <div  id='divText'>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><b> Giải trí cực đã - Màn hình 6.6" FullHD, tần số quét 90Hz hệ thống loa vòm Dolby Atmos.
+        <h2 class="card-title" style="text-align: center">Đặc điểm nổi bật</h2>
+            <div class="card-body">
+                <div  id='divText'>
+                    <p  style="margin-bottom: 11px; text-align: justify;"><b> Giải trí cực đã - Màn hình 6.6" FullHD, tần số quét 90Hz hệ thống loa vòm Dolby Atmos.
                                                                                         <br> Kết nối nhanh, mượt mà - Dòng sản phẩm hiếm có hỗ trợ 5G trong tầm giá, đi kèm chip Dimensity 700.
                                                                                         <br> Camera chụp ảnh đã chế độ - Camera 50MP, chụp toàn cảnh, chụp cận cảnh, chụp xoá phông.  
                                                                                         <br> Sử dụng đến 2.5 ngày - Với Pin 5000mAh, sạc nhanh 15W.
                                                                                         <br> Lưu ý: Thanh toán trước khi mở seal.</b></p>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A14" id="Điện thoại Samsung Galaxy A14" src="https://cdn.tgdd.vn/Products/Images/42/292770/samsung-galaxy-a14-tim-1.jpg" /></p>
-                            </div> 
-                        </div>
-                    </td>           
+                    <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Điện thoại Samsung Galaxy A14" id="Điện thoại Samsung Galaxy A14" src="https://cdn.tgdd.vn/Products/Images/42/303579/samsung-galaxy-a14-4g-tim-1.jpg" /></p>
+                <div>
+                    <br>
+                        <button class='button3' id='them' >Xem thêm</button>
+                </div>
+            </div>      
     </div>
-    
     <script>
         const them = document.getElementById("them");
         const divText = document.getElementById("divText");
         them.addEventListener("click", function() {
             divText.innerHTML += `
-                <table>
-                    <tr>
-                        <br>
-                        <h3 style="margin-bottom: 11px; text-align: justify;"><b>Thiết kế c&aacute; t&iacute;nh v&agrave; đơn giản</b></h3>
-                        <p style="margin-bottom: 11px; text-align: justify;">Cảm giác khi cầm hộp sạc rất vừa tay, nó nằm gọn trong lòng bàn tay mình. Khi mình sắm thêm một <br> case đựng nữa thì đây chính là một combo hoàn hảo. Mình có thể thoải mái treo móc bất kỳ đâu,<br> balo hay túi xách đều được, hơn nữa còn bảo vệ dock sạc khỏi những vết xước hoặc dấu vân tay khi <br>sử dụng. Tất nhiên, nếu không có case đựng, bạn vẫn hoàn toàn dễ dàng cất giữ và mang theo vô cùng<br> thuận tiện.
-Khi mở hộp sạc ra, mình có thể dễ dàng mở bằng một tay và nó cho mình cảm giác phần <br> bản lề chắc chắn, tiếng “tách” khi đóng hộp nghe khá vui tai.</p>
-                        <p style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Thiết kế cá tính và đơn giản 1" id="Thiết kế cá tính và đơn giản 11" src="https://cdn.tgdd.vn/Products/Images/54/286045/tai-nghe-bluetooth-true-wireless-galaxy-buds2-pro-151022-035734.jpg" /></p>
-                        <p style="margin-bottom: 11px; text-align: justify;">Trong hộp tai nghe khi mua về, mình nhận được tổng cộng 3 cặp đệm tai. Trong đó, có 1 cặp được <br> gắn sẵn lên tai nghe và 2 cặp rời đi kèm. Mỗi cặp đệm tai là một kích cỡ khác nhau, tương ứng <br> với 3 cỡ S - M - L. Do vậy, khá dễ dàng để lựa chọn được cặp đệm tai phù hợp với khuôn tai <br> của mình. Ngoài ra, khi cho bạn bè mượn cũng có thể đổi cặp đệm có kích cỡ khác vừa vặn với bạn <br> mình hơn.</p>
-                        <p style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Đệm silicon mềm mại, vừa tai 1" id="Đệm silicon mềm mại, vừa tai 11" src="https://cdn.tgdd.vn/Products/Images/54/286045/tai-nghe-bluetooth-true-wireless-galaxy-buds2-pro-151022-035731.jpg" /></p>
-                    </tr>
-                </table>
                 `;
         });
     </script> 
@@ -407,4 +346,5 @@ Khi mở hộp sạc ra, mình có thể dễ dàng mở bằng một tay và n�
                 </div>
             </div>
         </div>
+        <?php include "main_sp.php" ?>
         <?php include "footer.php"?>
