@@ -110,7 +110,7 @@
                     </td>
                     <td>
                         <div class="warpper-group-category" data-index='2'>
-                        <a href="sac-cap2.php">
+                        <a href="cap-sac2.php">
                             <img class='img'  src="https://www.bing.com/th?id=OIP.1F8NE5AomNFLJxXn84z_DAAAAA&w=175&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2"  style="width:55%; border-radius: 50px;" >
                             <br>
                             <a>Củ sạc Type C Samsung T4510 45W đen</a>
@@ -121,7 +121,7 @@
                     </td>
                     <td>
                         <div class="warpper-group-category" data-index='2'>
-                        <a href="sac-cap3.php">
+                        <a href="cap-sac3.php">
                             <img class='img'  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/c/u/cu-sac-nhanh-samsung-ep-ta210-2-cong-35w-3.jpg"  style="width:70%; border-radius: 50px;">
                             <br>
                             <a>Củ sạc Samsung 2 cổng 35W </a>
