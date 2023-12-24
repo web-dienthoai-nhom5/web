@@ -1,7 +1,7 @@
 <?php include "header.php"?>
     <div class="content">
         <div class="scrollable-content">
-            <a href="https://www.google.com" target="_blank">
+            <a href="https://www.samsung.com/vn/" target="_blank">
                 <img src="https://i.ytimg.com/vi/zMDlvmJ-WVQ/maxresdefault.jpg" alt="Clickable Image" class="clickable-image">
             </a>
             <br>
