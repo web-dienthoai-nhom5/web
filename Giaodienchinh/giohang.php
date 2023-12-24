@@ -1,77 +1,130 @@
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng</title>
-    <!-- Add your CSS stylesheets or styles here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td form {
+            display: flex;
+            align-items: center;
+        }
+
+        td form input[type="number"] {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        td form button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        td form button:hover {
+            background-color: #45a049;
+        }
+
+        td form input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        td form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Giỏ hàng</h1>
-    </header>
-    
-    <div class="container">
-        <h2>Thông tin đơn hàng</h2>
-        <table border="1">
-            <tr>
-                <th>Sản phẩm</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Màu sắc</th>
-                <th>RAM</th>
-                <!-- Add more columns as needed -->
-            </tr>
-            <?php
-            // Retrieve product information from the query string
-            $productName = $_GET['name'];
-            $productPrice = $_GET['price'];
-            $productQuantity = $_GET['quantity'];
-            $productColor = $_GET['color'];
-            $productRam = $_GET['ram'];
+    <h1>Giỏ hàng</h1>
 
-            // Display product information in a table row
-            echo "<tr>";
-            echo "<td>$productName</td>";
-            echo "<td>$productPrice</td>";
-            echo "<td>$productQuantity</td>";
-            echo "<td>$productColor</td>";
-            echo "<td>$productRam</td>";
-            // Add more columns as needed
-            echo "</tr>";
-            ?>
-        </table>
+    <?php
+    session_start();
 
-        <div>
-            <!-- Add total price, checkout button, etc. based on your requirements -->
-            <p>Tổng cộng: <?php echo $productPrice * $productQuantity; ?></p>
-            <button onclick="checkout()">Thanh toán</button>
-        </div>
-    </div>
+    // Kiểm tra sự tồn tại của giỏ hàng trong session
+    if (!isset($_SESSION['giohang'])) {
+        echo "<p>Giỏ hàng trống.</p>";
+    } else {
+        // Hiển thị giỏ hàng
+        echo "<table>";
+        echo "<tr><th>Mã SP</th><th>Tên SP</th><th>Giá</th><th>Số Lượng</th><th>Tổng Tiền</th><th>Xóa</th></tr>";
+        $tongTien = 0;
+        foreach ($_SESSION['giohang'] as $key => $item) {
+            // Kiểm tra xem khóa 'soluong' có tồn tại trong mỗi phần tử của giỏ hàng hay không
+            $soluong = isset($item['soluong']) ? intval($item['soluong']) : 1;
 
-    <!-- Add your JavaScript scripts here -->
-    <script>
-        function checkout() {
-            // Implement your checkout logic, e.g., redirect to a payment page
-            alert("Redirecting to payment page...");
+            // Kiểm tra nếu $soluong là một số nguyên hợp lệ
+            if (is_int($soluong) && $soluong > 0) {
+                $tongTien += $item['gia'] * $soluong;
+
+                echo "<tr>";
+                echo "<td>{$item['masp']}</td>";
+                echo "<td>{$item['tensp']}</td>";
+                echo "<td>{$item['gia']}</td>";
+                echo "<td><form method='post' action='capnhatsoluong.php'>
+                        <input type='hidden' name='masp' value='{$item['masp']}'>
+                        <input type='number' name='soluong' value='{$soluong}' min='1'>
+                        <button type='submit'>Cập nhật</button>
+                    </form></td>";
+                    echo "<td>" . ($item['gia'] * $soluong) . "</td>";
+                echo "<td><form method='post' action='xoasanpham.php'>
+                        <input type='hidden' name='masp' value='{$item['masp']}'>
+                        <button type='submit'>Xóa</button>
+                    </form></td>";
+                echo "</tr>";
+            } else {
+                // Xử lý trường hợp $soluong không hợp lệ
+                echo "<tr><td colspan='6'>Số lượng không hợp lệ.</td></tr>";
+            }
         }
-    </script>
-    <div class="support-table">
-        <h2><b>Tổng đài hỗ trợ (Miễn phí gọi)</b></h2>
-        <table class="contact-table">
-            <tr>
-                <td><i class="fas fa-exclamation-circle"></i> Khiếu nại:</td>
-                <td>1800.1063 (8:00 - 21:30)</td>
-            </tr>
-            <tr>
-                <td><i class="fas fa-wrench"></i> Bảo hành:</td>
-                <td>1800.1065 (8:00 - 21:00)</td>
-            </tr>
-            <tr>
-                <td><i class="fab fa-facebook"></i> Liên hệ trực tuyến</td>
-                <td>TiTan shop (24/24)</td>
-            </tr>
-        </table>
-    </div>
+        echo "<tr><td colspan='4'><b>Tổng Tiền</b></td><td><b>{$tongTien}</b></td><td></td></tr>";
+        echo "</table>";
+    }
+    ?>
+
+    <!-- Nút thanh toán -->
+    <form method='post' action='thanhtoan.php'>
+        <input type='submit' name='thanhtoan' value='Thanh toán'>
+    </form>
 </body>
 </html>
