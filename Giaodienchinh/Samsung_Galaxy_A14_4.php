@@ -22,7 +22,7 @@
                             <td>
                                 <!-- Existing price and promotion code -->
                                 <div class="st-price__left boxprice">
-                                    <div class="st-pd-price" id="product-price-online"><h2>4.690.000đ</h2></div>
+                                    <div class="st-pd-price" id="product-price-online"><h2>4.490.000đ</h2></div>
                                     <div class='st-pd-old-price'>
                                         <strike>5.190.000đ</strike>
                                     </div>
@@ -40,7 +40,7 @@
                                             <td>
                                                 <ul class="st-boxPromo">
                                                     <div class='st-pd-price-saving'>
-                                                        Giảm ngay 500.000đ
+                                                        Giảm ngay 700.000đ
                                                     </div>
                                                 </ul>
                                             </td>
