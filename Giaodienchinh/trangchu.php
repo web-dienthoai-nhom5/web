@@ -128,7 +128,7 @@
 
     <div class="content1">
         <div class="scrollable-content">
-            <a href="https://www.google.com" target="_blank">
+            <a href="https://www.samsung.com/vn/" target="_blank">
                 <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:0/q:80/plain/https://dashboard.cellphones.com.vn/storage/sac-cap-thang-11-02-update.png" alt="Clickable Image1" class="clickable-image1">
             </a>
             <br>
