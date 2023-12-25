@@ -21,7 +21,7 @@ session_start();
         </div>
         <table border="0" cellpadding="2px"width="600px">
             <?php
-                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=14") or die ("SELECT * FROM sanpham WHERE MASP=14" . "<br/><br/>" . mysqli_error($conn));
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=9") or die ("SELECT * FROM sanpham WHERE MASP=9" . "<br/><br/>" . mysqli_error($conn));
                 while($row=mysqli_fetch_assoc($result)){
                     ?>
                     <tr>
