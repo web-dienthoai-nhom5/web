@@ -43,6 +43,16 @@ INSERT INTO `KHACHHANG` (`MAKH`, `HOTEN`,`SODT`, `DCHI`,`EMAIL`,`MATKHAU` ) VALU
 -- Table structure for table `binhluan`
 --
 
+CREATE TABLE `users` (
+  `tendangky` char(4) COLLATE utf8_unicode_ci NOT NULL,
+  `hoten` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dchi` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sodt` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `matkhau` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
+
 CREATE TABLE IF NOT EXISTS `binhluan` (
   `Mabinhluan` int(11) NOT NULL AUTO_INCREMENT,
   `Mathanhvien` int(11) NOT NULL,
