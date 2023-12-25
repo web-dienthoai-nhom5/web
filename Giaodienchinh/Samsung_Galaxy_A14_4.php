@@ -17,7 +17,7 @@ session_start();
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Điện thoại Samsung Galaxy A14 5G</h1>
+                <h1 class="st-name"> Điện thoại Samsung Galaxy A14 4GB</h1>
         </div>
         <table border="0" cellpadding="2px"width="600px">
             <?php
