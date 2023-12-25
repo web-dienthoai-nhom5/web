@@ -1,73 +1,64 @@
+<?php
+session_start();
+?>
 <?php include "header.php"?>
+    <script>
+        $(document).ready(function(){
+            $(".add-to-cart").click(function(){
+                var id = $(this).val();
+                var url = "giohang.php?id=" + id;
+                window.open(url, "_self");
+            });
+        });
+    </script>
+    <?php
+    include("connect.php");
+    ?>
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
                 <h1 class="st-name"> Ốp lưng Galaxy M54 5G Nhựa cứng viền dẻo Pure II JM</h1>
+                <br>
         </div>
-        <div class="l-pd-row">
-            <table width=100%>
+        <table border="0" cellpadding="2px"width="600px">
+            <?php
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=27") or die ("SELECT * FROM sanpham WHERE MASP=27" . "<br/><br/>" . mysqli_error($conn));
+                while($row=mysqli_fetch_assoc($result)){
+                    ?>
                     <tr>
-                        <td>
-                            <div class="l-pd-left">
-                                <div class="st-slider fs-sale">
-                                    <div class="fs-sale-border">
-                                        <img src="https://cdn.tgdd.vn/Products/Images/60/317218/op-lung-galaxy-m54-5g-nhua-cung-vien-deo-pure-ii-jm-1.jpg" alt="border-detail">
-                                    </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="st-price__left boxprice">
-                                            <div class="st-pd-price" id="product-price-online"><h2>185.000đ</h2></div>
-                                            <div class='st-pd-old-price'>
-                                                <strike>200.000đ</strike>
-                                            </div>
-                                            <br>
-                                        </div>
-                                        <div class="promotion">
-                                            <br>
-                                            <table border='1' width=100%>
-                                                <tr>
-                                                    <td>
-                                                        <div class="title"><H4>Hưởng ngay khuyến mãi đặc biệt</H4></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <ul class="st-boxPromo">
-                                                                <div class = 'st-pd-price-saving'>
-                                                                    Giảm ngay 1.500.000đ
-                                                                </div>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br>
-                                        <div class="st-pd-btn">
-                                            <div class="btn btn-primary btn-xl btn--lg btn-muangay" onclick="ga('send', 'event', 'Product Detail', 'Click CTA Button', 'Mua Ngay'); handleEventTrackingClicks(39475);">
-                                            <div><strong>
-                                                <button class='btn-muangay'>MUA NGAY
-                                                    <br>
-                                                    Giao hàng tận nơi hoặc nhận ở cửa hàng
-                                                </button></strong></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-            </table>
+                    <td><img src="<?php echo $row['Hinhanh']?>"></td>
+                    <td>   	
+                        <b><?php echo $row['Tensp']?></b><br />
+                        <br />
+                        <b><?php echo "Số lượng: " . $row['Soluong']; ?></b><br />
+                        Price: 
+                        <?php
+                            if ($row['Gia_Discount'] < $row['Gia']) {
+                                // Giảm giá, hiển thị giá giảm màu xanh
+                                echo '<big style="color:green">$' . $row['Gia_Discount'] . '</big>';
+                                echo ' <span style="text-decoration: line-through; color: red;">$' . $row['Gia'] . '</span>';
+                            } else {
+                                // Không giảm giá, hiển thị giá gốc màu đỏ
+                                echo '<big style="color:red; text-decoration: line-through;">$' . $row['Gia'] . '</big>';
+                            }
+                        ?>
+                        <br /><br />
+                        <?php
+                        echo "<form method='post' action='themgiohang.php'>";
+                        echo "<input type='hidden' name='masp' value='{$row['MASP']}'>";
+                        echo "<input type='hidden' name='tensp' value='{$row['Tensp']}'>";
+                        echo "<input type='hidden' name='soluong' value='{$row['Soluong']}'>";
+                        echo "<input type='hidden' name='gia' value='{$row['Gia']}'>";
+                        echo "<button type='submit' name='themgiohang'style='background-color: green; color: white; padding: 10px 20px; font-size: 16px; width: 200px;' value='$row[MASP]'>THÊM GIỎ HÀNG</button>";
+                        echo "</form>";
+                        ?>
+                    </td>	
+                </tr>
+                <tr><td colspan="2"><hr size="1" /></td></tr>
+                <?php } ?> 
+        </table>
         </div>
-        
+    </div>
     <div class="renderboxbtn">
                         <h2 class="card-title" style="text-align: center">Đặc điểm nổi bật</h2>
                         <div class="card-body">
