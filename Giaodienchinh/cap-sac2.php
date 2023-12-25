@@ -1,72 +1,64 @@
+<?php
+session_start();
+?>
 <?php include "header.php"?>
+    <script>
+        $(document).ready(function(){
+            $(".add-to-cart").click(function(){
+                var id = $(this).val();
+                var url = "giohang.php?id=" + id;
+                window.open(url, "_self");
+            });
+        });
+    </script>
+    <?php
+    include("connect.php");
+    ?>
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name">Củ sạc Samsung Type-C 45W kèm cáp C-C 5A 1.8M T4510</h1>
+                <h1 class="st-name">Củ sạc Samsung Type-C 45W kèm cáp C-C 5A 18M T4510</h1>
+                <br>
         </div>
-        <div class="l-pd-row">
-            <table width=100%>
+        <table border="0" cellpadding="2px"width="600px">
+            <?php
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=35") or die ("SELECT * FROM sanpham WHERE MASP=35" . "<br/><br/>" . mysqli_error($conn));
+                while($row=mysqli_fetch_assoc($result)){
+                    ?>
                     <tr>
-                        <td>
-                            <div class="l-pd-left">
-                                <div class="st-slider fs-sale">
-                                    <div class="fs-sale-border">
-                                        <img src="https://www.bing.com/th?id=OIP.1F8NE5AomNFLJxXn84z_DAAAAA&w=175&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" alt="border-detail">
-                                    </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="st-price__left boxprice">
-                                            <div class="st-pd-price" id="product-price-online"><h2>950.000đ</h2></div>
-                                            <div class='st-pd-old-price'>
-                                                <strike >1.140.000đ</strike>
-                                            </div>
-                                            <br>
-                                        </div>
-                                        <div class="promotion">
-                                            <br>
-                                            <table border='1' width=100%>
-                                                <tr>
-                                                    <td>
-                                                        <div class="title"><H4>Hưởng ngay khuyến mãi đặc biệt</H4></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <ul class="st-boxPromo">
-                                                                <div class = 'st-pd-price-saving'>
-                                                                    Giảm ngay 249.000đ
-                                                                </div>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br>
-                                        <div class="st-pd-btn">
-                                            <div class="btn btn-primary btn-xl btn--lg btn-muangay" onclick="ga('send', 'event', 'Product Detail', 'Click CTA Button', 'Mua Ngay'); handleEventTrackingClicks(39475);">
-                                            <div><strong>
-                                                <button class='btn-muangay'>MUA NGAY
-                                                    <br>
-                                                    Giao hàng tận nơi hoặc nhận ở cửa hàng
-                                                </button></strong></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-            </table>
+                    <td><img src="<?php echo $row['Hinhanh']?>"></td>
+                    <td>   	
+                        <b><?php echo $row['Tensp']?></b><br />
+                        <br />
+                        <b><?php echo "Số lượng: " . $row['Soluong']; ?></b><br />
+                        Price: 
+                        <?php
+                            if ($row['Gia_Discount'] < $row['Gia']) {
+                                // Giảm giá, hiển thị giá giảm màu xanh
+                                echo '<big style="color:green">$' . $row['Gia_Discount'] . '</big>';
+                                echo ' <span style="text-decoration: line-through; color: red;">$' . $row['Gia'] . '</span>';
+                            } else {
+                                // Không giảm giá, hiển thị giá gốc màu đỏ
+                                echo '<big style="color:red; text-decoration: line-through;">$' . $row['Gia'] . '</big>';
+                            }
+                        ?>
+                        <br /><br />
+                        <?php
+                        echo "<form method='post' action='themgiohang.php'>";
+                        echo "<input type='hidden' name='masp' value='{$row['MASP']}'>";
+                        echo "<input type='hidden' name='tensp' value='{$row['Tensp']}'>";
+                        echo "<input type='hidden' name='soluong' value='{$row['Soluong']}'>";
+                        echo "<input type='hidden' name='gia' value='{$row['Gia']}'>";
+                        echo "<button type='submit' name='themgiohang'style='background-color: green; color: white; padding: 10px 20px; font-size: 16px; width: 200px;' value='$row[MASP]'>THÊM GIỎ HÀNG</button>";
+                        echo "</form>";
+                        ?>
+                    </td>	
+                </tr>
+                <tr><td colspan="2"><hr size="1" /></td></tr>
+                <?php } ?> 
+        </table>
         </div>
+    </div>
     <div class="g-container">
     <div class="st-card">
                             <h2 class="card-title" style="text-align: center">Thông số kỹ thuật</h2>
@@ -102,8 +94,8 @@
                         <h2 class="card-title" style="text-align: center">Đặc điểm nổi bật</h2>
                         <div class="card-body">
                             <div  id='divText'>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><b>Củ sạc nhanh Samsung 25W USB-C 1 cổng - Phụ kiện thiết yếu cho người dùng Samsung
-Củ sạc của Samsung luôn được biết đến với chất lượng tốt cùng tốc độ sạc nhanh chóng. Nếu bạn đang cần một củ sạc mới cho điện thoại Samsung hoặc bất kỳ thiết bị smartphone nào, hãy mua ngay sản phẩm củ sạc Samsung 25W 1 cổng.</b></p>
+                                <p  style="margin-bottom: 11px; text-align: justify;"><b>Củ sạc Samsung Type-C 45W kèm cáp C-C 5A 18M T4510 - Phụ kiện thiết yếu cho người dùng Samsung
+Củ sạc của Samsung luôn được biết đến với chất lượng tốt cùng tốc độ sạc nhanh chóng. Nếu bạn đang cần một củ sạc mới cho điện thoại Samsung hoặc bất kỳ thiết bị smartphone nào, hãy mua ngay sản phẩm Củ sạc Samsung Type-C 45W kèm cáp C-C 5A 18M T4510.</b></p>
                                 <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_205_2.png" alt="">
                             </div> 
                         </div>
