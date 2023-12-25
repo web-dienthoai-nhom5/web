@@ -18,12 +18,12 @@ session_start();
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name">Tai nghe Có Dây Samsung IA500</h1>
+                <h1 class="st-name"> Tai nghe Có Dây Mozard DS510-WB</h1>
                 <br>
         </div>
         <table border="0" cellpadding="2px"width="600px">
             <?php
-                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=32") or die ("SELECT * FROM sanpham WHERE MASP=32" . "<br/><br/>" . mysqli_error($conn));
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=30") or die ("SELECT * FROM sanpham WHERE MASP=30" . "<br/><br/>" . mysqli_error($conn));
                 while($row=mysqli_fetch_assoc($result)){
                     ?>
                     <tr>
@@ -60,7 +60,6 @@ session_start();
         </table>
         </div>
     </div>
-        
     <div class="renderboxbtn">
             <table width=100%>
                 <tr>
@@ -73,7 +72,7 @@ session_start();
                                                                                         <br> Trả lời cuộc gọi, tăng/giảm âm lượng qua nút điều khiển dễ dàng.
                                                                                         <br> Giọng thoại trong trẻo hơn với microphone tích hợp trên tai nghe.
                                                                                         <br> Kết nối với các thiết bị khác tiện lợi cùng độ dài 1.2 m.</b></p>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Tai nghe Có Dây Samsung IA500" id="Tai nghe Có Dây Samsung IA500" src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" /></p>
+                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Tai nghe Có Dây Mozard DS510-WB" id="Tai nghe Có Dây Mozard DS510-WB" src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" /></p>
                             </div> 
                         </div>
                     </td>
