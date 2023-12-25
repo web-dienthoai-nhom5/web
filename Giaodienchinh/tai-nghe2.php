@@ -17,12 +17,12 @@ session_start();
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name">Tai nghe Bluetooth True Wireless Samsung Galaxy Buds 2 R177N</h1>
+                <h1 class="st-name"> Tai nghe Bluetooth True Wireless Samsung Galaxy Buds 2 Pro R510N</h1>
                 <br>
         </div>
         <table border="0" cellpadding="2px"width="600px">
             <?php
-                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=31") or die ("SELECT * FROM sanpham WHERE MASP=31" . "<br/><br/>" . mysqli_error($conn));
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=33") or die ("SELECT * FROM sanpham WHERE MASP=33" . "<br/><br/>" . mysqli_error($conn));
                 while($row=mysqli_fetch_assoc($result)){
                     ?>
                     <tr>
@@ -59,6 +59,7 @@ session_start();
         </table>
         </div>
     </div>
+        
     <!-- <input hidden type="text" name="idproduct" id="id-product" value="39475" />
     <input hidden type="text" name="nameproduct" id="name-product" value="Tai nghe c&#xF3; d&#xE2;y Samsung IA500 3.5mm" />
     <span hidden id="product-varian">654017</span>
