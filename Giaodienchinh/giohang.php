@@ -94,7 +94,7 @@
             $soluong = isset($item['soluong']) ? intval($item['soluong']) : 1;
 
             // Kiểm tra nếu $soluong là một số nguyên hợp lệ
-            if (is_int($soluong) && $soluong > 0) {
+            if (is_int($soluong) && $soluong >= 0) {
                 $tongTien += $item['gia'] * $soluong;
 
                 echo "<tr>";
@@ -103,7 +103,7 @@
                 echo "<td>{$item['gia']}</td>";
                 echo "<td><form method='post' action='capnhatsoluong.php'>
                         <input type='hidden' name='masp' value='{$item['masp']}'>
-                        <input type='number' name='soluong' value='{$soluong}' min='1'>
+                        <input type='number' name='soluong' value='{$soluong}' min='0'>
                         <button type='submit'>Cập nhật</button>
                     </form></td>";
                     echo "<td>" . ($item['gia'] * $soluong) . "</td>";
@@ -111,6 +111,11 @@
                         <input type='hidden' name='masp' value='{$item['masp']}'>
                         <button type='submit'>Xóa</button>
                     </form></td>";
+                    if ($soluong == 0) {
+                        unset($_SESSION['giohang'][$key]);
+                    }
+    
+                    echo "</tr>";
                 echo "</tr>";
             } else {
                 // Xử lý trường hợp $soluong không hợp lệ
@@ -128,3 +133,4 @@
     </form>
 </body>
 </html>
+<?php include "header.php"?>
