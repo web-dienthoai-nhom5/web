@@ -1,4 +1,8 @@
-<?php include "header.php"?>
+<?php 
+include "header.php"
+
+?>
+
 <style>
         body {
     font-family: Arial, sans-serif;
@@ -69,6 +73,11 @@ if(isset($_POST['dangky'])) {
 
         if ($connect->query($insertUserQuery) === TRUE) {
             echo "Đăng ký thành công!";
+            // Chuyển hướng đến trang chủ
+            header("Location: trangchu.php"); // Đổi 'trangchu.php' thành đường dẫn thực tế của trang chủ
+            $_SESSION['tendangky'] = $tendangky;
+            exit(); // Đảm bảo không có mã PHP nào thực hiện sau khi chuyển hướng
+
         } else {
             echo "Lỗi: " . $insertUserQuery . "<br>" . $connect->error;
         }
@@ -77,6 +86,7 @@ if(isset($_POST['dangky'])) {
 $connect->close();
 
 ?>
+
 <body>
     <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
