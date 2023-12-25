@@ -97,8 +97,17 @@ nav a:hover {
     text-decoration: none;
 }
 
+.account {
+    color: black;
+}
+
     </style>
 </head>
+
+<?php
+session_start();
+
+?>
 
 <body>
 <div class="main-top" id="home">
@@ -110,17 +119,23 @@ nav a:hover {
         <div class="bar">
             <nav>
                 <div class="search">
-                    <form action="timkiem.php" method="GET">
-                        <input type="text" name="query" placeholder="Tìm kiếm...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    <input type="text" placeholder="Tìm kiếm...">
                 </div>
                 <a href="index.php"><i class="fas fa-home"></i> Trang chủ</a>
                 <a href="Samsung.php"><i class="fas fa-mobile"></i> Samsung</a>
                 <a href="phukien.php"><i class="fas fa-mobile-alt"></i> Phụ kiện</a>
                 <a href="giohang.php"><i class="fas fa-shopping-cart"></i> Giỏ hàng</a>
-                <button class="login-btn"><a href="dangnhap.php" >Đăng nhập</a></button>
-                <button class="signup-btn"><a href='dangky.php'>Đăng ký</a></button>
+                <?php
+    // Kiểm tra nếu người dùng đã đăng nhập
+    if (isset($_SESSION['tendangky'])) {
+        echo '<div id="account" color: #fff>Tài khoản</div>';
+        echo '<button class="logout-btn"><a href="dangxuat.php">Đăng xuất</a></button>';
+    } else {
+        // Nếu chưa đăng nhập, hiển thị nút Đăng nhập và Đăng ký
+        echo '<button class="login-btn"><a href="dangnhap.php">Đăng nhập</a></button>';
+        echo '<button class="signup-btn"><a href="dangky.php">Đăng ký</a></button>';
+    }
+    ?>
             </nav>
         </div>
     </header>
