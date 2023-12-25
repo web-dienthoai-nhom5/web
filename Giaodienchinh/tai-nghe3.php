@@ -1,110 +1,65 @@
 
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<title>Tai nghe nh&#xE9;t tai Samsung IA500 3.5mm nh&#x1ECF; g&#x1ECD;n &#xEA;m tai, gi&#xE1; r&#x1EBB;</title>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="connect.php">
-    <title>TiTan shop</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="img.phukien">
-    <script src="/phu-kien/bundle/functionLibDetail.min.js?v=t_GMSbdkyEzHk-F-3pZkiuO4UZe3QwlULPEKHNR-ICo"></script>
-    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyDuL1T3EzpFe3e2hW5QevyPJiR2uoW7_nY&sensor=false&output=html"></script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W84P7P');</script>
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-36867340-1','auto');ga('require','GTM-PHK43FL');ga('send','pageview');ga('require','ecommerce','ecommerce.js');</script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    
-    <link rel="stylesheet" href="css_phukien.css">
-    
-
-</head>
-<body>
-    <header>
-        <h1></h1>
-        <img src="https://i.pinimg.com/736x/12/eb/74/12eb74b79ff13b133af6db1e3055e978.jpg" alt="Logo" class="logo" style="width:100%">
-    </header>
-    <div class="row">
-        <ol class="breadcrumb breadcrumb-margin">
-            <li class="breadcrumb-item"><a href="../../main/index.php" onClick="gaSendEvent('Product Detail', 'Click Breadcrumb', 'Trang chủ');">Trang chủ</a></li>
-         
-            <li class="breadcrumb-item"><a href="phukien.php" onClick="gaSendEvent('Product Detail', 'Click Breadcrumb', 'Phụ kiện');">Phụ kiện</a></li>
-            
-            <li class="breadcrumb-item"><a href="tai-nghe.php" onClick="gaSendEvent('Product Detail', 'Click Breadcrumb', 'Phụ kiện');">Tai nghe</a></li>
-        </ol>
-    </div>
+<?php
+session_start();
+?>
+<?php include "header.php"?>
+    <script>
+        $(document).ready(function(){
+            $(".add-to-cart").click(function(){
+                var id = $(this).val();
+                var url = "giohang.php?id=" + id;
+                window.open(url, "_self");
+            });
+        });
+    </script>
+    <?php
+    include("connect.php");
+    ?>
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Tai nghe Có Dây Mozard DS510-WB</h1>
+                <h1 class="st-name">Tai nghe Có Dây Samsung IA500</h1>
+                <br>
         </div>
-        <div class="l-pd-row">
-            <table width=100%>
+        <table border="0" cellpadding="2px"width="600px">
+            <?php
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=32") or die ("SELECT * FROM sanpham WHERE MASP=32" . "<br/><br/>" . mysqli_error($conn));
+                while($row=mysqli_fetch_assoc($result)){
+                    ?>
                     <tr>
-                        <td>
-                            <div class="l-pd-left">
-                                <div class="st-slider fs-sale">
-                                    <div class="fs-sale-border">
-                                        <img src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" alt="border-detail">
-                                    </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <div class="st-price__left boxprice">
-                                            <div class="st-pd-price" id="product-price-online"><h2>69.000đ</h2></div>
-                                            <div class='st-pd-old-price'>
-                                                <strike  >75.000đ</strike>
-                                            </div>
-                                            <br>
-                                        </div>
-                                        <div class="promotion">
-                                            <br>
-                                            <table border='1' width=100%>
-                                                <tr>
-                                                    <td>
-                                                        <div class="title"><H4>Hưởng ngay khuyến mãi đặc biệt</H4></div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <ul class="st-boxPromo">
-                                                                <div class = 'st-pd-price-saving'>
-                                                                    Giảm ngay 1.500.000đ
-                                                                </div>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <br>
-                                        <div class="st-pd-btn">
-                                            <div class="btn btn-primary btn-xl btn--lg btn-muangay" onclick="ga('send', 'event', 'Product Detail', 'Click CTA Button', 'Mua Ngay'); handleEventTrackingClicks(39475);">
-                                            <div><strong>
-                                                <button class='btn-muangay'>MUA NGAY
-                                                    <br>
-                                                    Giao hàng tận nơi hoặc nhận ở cửa hàng
-                                                </button></strong></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-            </table>
+                    <td><img src="<?php echo $row['Hinhanh']?>"></td>
+                    <td>   	
+                        <b><?php echo $row['Tensp']?></b><br />
+                        <br />
+                        <b><?php echo "Số lượng: " . $row['Soluong']; ?></b><br />
+                        Price: 
+                        <?php
+                            if ($row['Gia_Discount'] < $row['Gia']) {
+                                // Giảm giá, hiển thị giá giảm màu xanh
+                                echo '<big style="color:green">$' . $row['Gia_Discount'] . '</big>';
+                                echo ' <span style="text-decoration: line-through; color: red;">$' . $row['Gia'] . '</span>';
+                            } else {
+                                // Không giảm giá, hiển thị giá gốc màu đỏ
+                                echo '<big style="color:red; text-decoration: line-through;">$' . $row['Gia'] . '</big>';
+                            }
+                        ?>
+                        <br /><br />
+                        <?php
+                        echo "<form method='post' action='themgiohang.php'>";
+                        echo "<input type='hidden' name='masp' value='{$row['MASP']}'>";
+                        echo "<input type='hidden' name='tensp' value='{$row['Tensp']}'>";
+                        echo "<input type='hidden' name='soluong' value='{$row['Soluong']}'>";
+                        echo "<input type='hidden' name='gia' value='{$row['Gia']}'>";
+                        echo "<button type='submit' name='themgiohang'style='background-color: green; color: white; padding: 10px 20px; font-size: 16px; width: 200px;' value='$row[MASP]'>THÊM GIỎ HÀNG</button>";
+                        echo "</form>";
+                        ?>
+                    </td>	
+                </tr>
+                <tr><td colspan="2"><hr size="1" /></td></tr>
+                <?php } ?> 
+        </table>
         </div>
+    </div>
         
     <div class="renderboxbtn">
             <table width=100%>
@@ -118,7 +73,7 @@
                                                                                         <br> Trả lời cuộc gọi, tăng/giảm âm lượng qua nút điều khiển dễ dàng.
                                                                                         <br> Giọng thoại trong trẻo hơn với microphone tích hợp trên tai nghe.
                                                                                         <br> Kết nối với các thiết bị khác tiện lợi cùng độ dài 1.2 m.</b></p>
-                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Tai nghe Có Dây Mozard DS510-WB" id="Tai nghe Có Dây Mozard DS510-WB" src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" /></p>
+                                <p  style="margin-bottom: 11px; text-align: justify;"><img class='l-pd-left' alt="Tai nghe Có Dây Samsung IA500" id="Tai nghe Có Dây Samsung IA500" src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" /></p>
                             </div> 
                         </div>
                     </td>
