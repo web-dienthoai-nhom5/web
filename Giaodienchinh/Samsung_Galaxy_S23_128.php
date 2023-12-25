@@ -1,98 +1,63 @@
+<?php
+session_start();
+?>
 <?php include "header.php"?>
+    <script>
+        $(document).ready(function(){
+            $(".add-to-cart").click(function(){
+                var id = $(this).val();
+                var url = "giohang.php?id=" + id;
+                window.open(url, "_self");
+            });
+        });
+    </script>
+    <?php
+    include("connect.php");
+    ?>
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name">Điện thoại Samsung Galaxy S23 5G 128GB</h1>
+                <h1 class="st-name"> Điện thoại Samsung Galaxy S23 5G 128GB</h1>
         </div>
-        <div class="l-pd-row">
-        <table width=100%>
-            <tr>
-                <td>
-                    <div class="l-pd-left">
-                        <div class="st-slider fs-sale">
-                            <div class="fs-sale-border">
-                                <img src="https://cdn.tgdd.vn/Products/Images/42/264060/samsung-galaxy-s23-den-1-1.jpg" alt="Samsung Galaxy S23 5G 128GB">
-                            </div>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <table>
-                        <tr>
-                            <td>
-                                <!-- Existing price and promotion code -->
-                                <div class="st-price__left boxprice">
-                                    <div class="st-pd-price" id="product-price-online"><h2>16.990.000đ</h2></div>
-                                    <div class='st-pd-old-price'>
-                                        <strike>22.990.000đ</strike>
-                                    </div>
-                                    <br>
-                                </div>
-                                <div class="promotion">
-                                    <br>
-                                    <table border='1' width=100%>
-                                        <tr>
-                                            <td>
-                                                <div class="title"><h4>Hưởng ngay khuyến mãi đặc biệt</h4></div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <ul class="st-boxPromo">
-                                                    <div class='st-pd-price-saving'>
-                                                        Giảm ngay 6.000.000đ!
-                                                    </div>
-                                                </ul>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <!-- Purchase button -->
-                                <br>
-                                <div class="st-pd-btn">
-                                    <div class="btn btn-primary btn-xl btn--lg btn-muangay" onclick="ga('send', 'event', 'Product Detail', 'Click CTA Button', 'Mua Ngay'); handleEventTrackingClicks(39475);">
-                                        <div><strong>
-                                            <button class='btn-muangay'id="muaNgayBtn">MUA NGAY
-                                                <br>
-                                                Giao hàng tận nơi hoặc nhận ở cửa hàng
-                                            </button></strong></div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+        <table border="0" cellpadding="2px"width="600px">
+            <?php
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=24") or die ("SELECT * FROM sanpham WHERE MASP=24" . "<br/><br/>" . mysqli_error($conn));
+                while($row=mysqli_fetch_assoc($result)){
+                    ?>
+                    <tr>
+                    <td><img src="<?php echo $row['Hinhanh']?>"></td>
+                    <td>   	
+                        <b><?php echo $row['Tensp']?></b><br />
+                        <br />
+                        <b><?php echo "Số lượng: " . $row['Soluong']; ?></b><br />
+                        Price: 
+                        <?php
+                            if ($row['Gia_Discount'] < $row['Gia']) {
+                                // Giảm giá, hiển thị giá giảm màu xanh
+                                echo '<big style="color:green">$' . $row['Gia_Discount'] . '</big>';
+                                echo ' <span style="text-decoration: line-through; color: red;">$' . $row['Gia'] . '</span>';
+                            } else {
+                                // Không giảm giá, hiển thị giá gốc màu đỏ
+                                echo '<big style="color:red; text-decoration: line-through;">$' . $row['Gia'] . '</big>';
+                            }
+                        ?>
+                        <br /><br />
+                        <?php
+                        echo "<form method='post' action='themgiohang.php'>";
+                        echo "<input type='hidden' name='masp' value='{$row['MASP']}'>";
+                        echo "<input type='hidden' name='tensp' value='{$row['Tensp']}'>";
+                        echo "<input type='hidden' name='soluong' value='{$row['Soluong']}'>";
+                        echo "<input type='hidden' name='gia' value='{$row['Gia']}'>";
+                        echo "<button type='submit' name='themgiohang'style='background-color: green; color: white; padding: 10px 20px; font-size: 16px; width: 200px;' value='$row[MASP]'>THÊM GIỎ HÀNG</button>";
+                        echo "</form>";
+                        ?>
+                    </td>	
+                </tr>
+                <tr><td colspan="2"><hr size="1" /></td></tr>
+                <?php } ?> 
         </table>
+        </div>
     </div>
-    <script>
-    $(document).ready(function () {
-        // Function to handle the click event on the "Mua Ngay" button
-        $(".btn-muangay").on("click", function () {
-            // Retrieve product information
-            var productName = "Điện thoại Samsung Galaxy S23 5G 128GB"; // You can replace this with dynamic data
-            var productPrice = parseFloat($("#product-price-online").text().replace("đ", "").replace(",", ""));
-            var productQuantity = 1; // You can set the quantity based on user input
-            var productColor = $("#color-select").val();
-            var productRam = $("#gb-select").val();
-
-            // Create a query string with the product information
-            var queryString =
-                "?name=" + encodeURIComponent(productName) +
-                "&price=" + productPrice +
-                "&quantity=" + productQuantity +
-                "&color=" + encodeURIComponent(productColor) +
-                "&ram=" + encodeURIComponent(productRam);
-
-            // Redirect to giohang.php with the product information
-            window.location.href = "giohang.php" + queryString;
-        });
-    });
-</script>
     <div class="b-container">
     <div class="st-card">
         <br>
