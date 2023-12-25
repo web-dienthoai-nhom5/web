@@ -17,12 +17,12 @@ session_start();
     <div class="container">
         <div class="g-container">
             <div class="l-pd-top">
-                <h1 class="st-name"> Tai nghe Có Dây Mozard DS510-WB</h1>
+                <h1 class="st-name"> Tai nghe Có Dây Samsung IA500</h1>
                 <br>
         </div>
         <table border="0" cellpadding="2px"width="600px">
             <?php
-                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=30") or die ("SELECT * FROM sanpham WHERE MASP=30" . "<br/><br/>" . mysqli_error($conn));
+                $result = mysqli_query($conn, "SELECT * FROM sanpham WHERE MASP=32") or die ("SELECT * FROM sanpham WHERE MASP=32" . "<br/><br/>" . mysqli_error($conn));
                 while($row=mysqli_fetch_assoc($result)){
                     ?>
                     <tr>
