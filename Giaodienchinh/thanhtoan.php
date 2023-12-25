@@ -35,7 +35,7 @@ if (isset($_POST['thanhtoan'])) {
                 $trigia = $gia * $soluong;
 
                 // Thêm chi tiết hóa đơn vào bảng CTHD
-                $sqlInsertCTHD = "INSERT INTO CTHD (SOHD, MASP, SL) VALUES ('$soHD', '$masp', '$soluong')";
+                $sqlInsertCTHD = "INSERT INTO CTHD (ID,SOHD, MASP, SL) VALUES ('1001','$soHD', '$masp', '$soluong')";
                 if ($conn->query($sqlInsertCTHD) === TRUE) {
                     // Cập nhật số lượng sản phẩm trong bảng SANPHAM
                     $sqlUpdateSanPham = "UPDATE SANPHAM SET Soluong = Soluong - $soluong WHERE MASP = '$masp'";
