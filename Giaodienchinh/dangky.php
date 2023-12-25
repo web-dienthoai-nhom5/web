@@ -43,35 +43,48 @@
         input[type="submit"]:hover {
             background-color: #2c3e50;
         }
-    </style>
-    <?php
-    include('../admincp/config/connect.php');
-// Function to securely hash the password
-function hashPassword($matkhau) {
-    return password_hash($matkhau, PASSWORD_BCRYPT);
-}
+</style>
+<?php
+// Kết nối đến cơ sở dữ liệu (thay đổi thông tin kết nối theo cấu hình của bạn)
+include "connect.php";
 
+// Xử lý đăng ký khi nhấn nút "Đăng ký"
 if(isset($_POST['dangky'])) {
-    // Retrieve form data
+    $tendangky = $_POST["tendangky"];
     $hoten = $_POST["hoten"];
-    $email = $_POST["email"];
+    $sodt = $_POST["sodt"];
     $dchi = $_POST["dchi"];
-    $sodt =  $_POST["sodt"];
     $matkhau = $_POST["matkhau"];
-    $hashed_matkhau = hashPassword($matkhau);
+    $email = $_POST["email"];
 
-    // Insert data into the 'members' table
-    $sql = "INSERT INTO dangky (HOTEN, SODT, DCHI , EMAIL, MATKHAU) VALUES ('$hoten', '$sodt', '$dchi', '$email', '$hashed_matkhau')";
-    if ($sql) {
-        echo '<script type="text/javascript">alert("Bạn đã đăng ký thành công!");</script>';
-    } 
+    // Kiểm tra xem tên người dùng đã tồn tại chưa
+    $checkUserQuery = "SELECT * FROM users WHERE tendangky = '$tendangky'";
+    $result = $connect->query($checkUserQuery);
+
+    if ($result->num_rows > 0) {
+        echo "Tên người dùng đã tồn tại. Vui lòng chọn tên khác.";
+    } else {
+        // Thêm người dùng mới vào cơ sở dữ liệu
+        $insertUserQuery = "INSERT INTO users (tendangky, hoten, sodt, dchi, matkhau, email) VALUES ('$tendangky', '$hoten', '$sodt', '$dchi', '$matkhau', '$email')";
+
+        if ($connect->query($insertUserQuery) === TRUE) {
+            echo "Đăng ký thành công!";
+        } else {
+            echo "Lỗi: " . $insertUserQuery . "<br>" . $connect->error;
+        }
+    }
 }
-    #$connect->close();
+$connect->close();
+
 ?>
 <body>
     <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
-    <form action=" " method="post">
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <table border='1' width='50%'>
+            <tr>
+                <td><label for="tendangky">Tên đăng ký:</label></td>
+                 <td> <input type="text" name="tendangky" required><br></td>
+             </tr>
             <tr>
                 <td><label for="hoten">Họ và Tên:</label></td>
                 <td> <input type="text" name="hoten" required><br></td>
@@ -98,5 +111,4 @@ if(isset($_POST['dangky'])) {
         </table>
     </form>
     <?php include "footer.php"?>
-
 
