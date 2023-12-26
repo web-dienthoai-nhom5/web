@@ -29,6 +29,8 @@
 
 <?php
 
+include "connect.php";
+
 // Kiểm tra quyền đăng nhập
 if (isset($_POST["username"]) && isset($_POST["password"])) {
   $username = $_POST["username"];
