@@ -1,78 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Đăng nhập</title>
-</head>
-<body>
-
-  <h1>Đăng nhập</h1>
-
-  <form action="login.php" method="post">
-
-    <div class="form-group">
-      <label for="username">Tên đăng nhập</label>
-      <input type="text" name="username" id="username" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label for="password">Mật khẩu</label>
-      <input type="password" name="password" id="password" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Đăng nhập</button>
-
-  </form>
-
-</body>
-</html>
 <?php include "header.php"?>
-
 <?php
 
-include "connect.php";
-
 session_start();
-// Kiểm tra quyền đăng nhập
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
 
-  // Kiểm tra trong bảng admin
-  $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+// Include your database connection file if needed
+// include "templates/connect.php";
 
-  $result = $conn->query($sql);
+// Simulate user authentication logic
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  // Nếu người dùng là admin
-  if ($result->num_rows > 0) {
-    // Chuyển hướng đến trang của admin
-    header("Location: admin.php");
-  } else {
-    // Kiểm tra trong bảng users
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-
-    $result = $conn->query($sql);
-
-    // Nếu người dùng tồn tại
-    if ($result->num_rows > 0) {
-      // Đăng nhập bình thường
-      $row = $result->fetch_assoc();
-
-      // Đặt thông tin người dùng vào session
-      $_SESSION["username"] = $row["username"];
-      $_SESSION["is_admin"] = $row["is_admin"];
-
-      // Chuyển hướng đến trang chủ
-      header("Location: trangchu.php");
+    // Replace this with your actual authentication logic
+    // In a real scenario, you would check against a database.
+    // If authentication is successful, set the user in the session.
+    if ($username === 'user' && $password === 'password') {
+        $_SESSION['current-user'] = [
+            'TaiKhoan' => $username,
+            // Add other user details if needed
+        ];
+        echo json_encode(['status' => 1, 'message' => 'Login successful']);
+        exit;
     } else {
-      // Người dùng không tồn tại
-      echo "Tài khoản hoặc mật khẩu không chính xác";
+        echo json_encode(['status' => 0, 'message' => 'Invalid username or password']);
+        exit;
     }
-  }
-
-  // Đóng kết nối
-  $conn->close();
 }
-
 ?>
-<?php include "footer.php"?>
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/phone/logo.png">
+    <!-- Author Meta -->
+    <meta name="author" content="CodePixar">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>3TN - Apple Shop</title>
+
+    <!-- CSS -->
+    <!-- Add your CSS links here -->
+
+</head>
+
+<body>
+    <section class="banner-area organic-breadcrumb">
+        <!-- Your banner content here -->
+    </section>
+
+    <?php if (empty($_SESSION['current-user'])): ?>
+        <!-- Login form section -->
+        <section class="login_box_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Your login box image and content here -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="login_form_inner">
+                            <h3>Đăng nhập vào trang web</h3>
+                            <form class="row login_form" id="login">
+                                <div class="col-md-12 form-group">
+                                    <input type="text" required class="form-control" id="username" name="username" placeholder="Tên đăng nhập" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input type="password" required class="form-control" id="password" name="password" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
+                                </div>
+                                <div class="mt-4 col-md-12 form-group">
+                                    <input type="submit" value="Đăng nhập" name="submit" class="primary-btn"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your script to handle form submission -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#login").submit(function(e) {
+                    e.preventDefault()
+
+                    username = $("#username").val()
+                    password = $("#password").val()
+
+                    $.ajax({
+                        type: "POST",
+                        url: "login.php",
+                        dataType: "json",
+                        data: {
+                            username: username,
+                            password: password,
+                        },
+                        success: function (data) {
+                            if (data.status == 1) {
+                                alert(data.message);
+                                window.location.reload()
+                            } else {
+                                alert(data.message);
+                            }
+                        }
+                    })
+                })
+            })
+        </script>
+    <?php else:
+        // Redirect the user to the appropriate page based on their role
+        $currentUser = $_SESSION['current-user'];
+        if ($currentUser['MaQuyen'] == 1) {
+            header("Location: admin/pages/dashboard.php");
+        } else {
+            header("Location: index.php");
+        }
+    endif; 
+    ?>
+    <style>
+         body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .primary-btn {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        primary-btn:hover {
+            background-color: #2c3e50;
+        }
+    </style>
+    <?php include "footer.php"?>
+
