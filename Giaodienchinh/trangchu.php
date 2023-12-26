@@ -1,4 +1,7 @@
-<?php include 'header.php';?>
+<?php 
+    include 'header.php';
+?>
+
 
     <div class="content">
         <div class="scrollable-content">
@@ -95,7 +98,7 @@
                     </td>
                     <td>
                         <div class="warpper-group-category" data-index='2'>
-                        <a href="Samsung_Galaxy_A14.php">
+                        <a href="https://localhost:8080/DoAn/Samsung_Galaxy_A14.php">
                             <img src="https://cdn.tgdd.vn/Products/Images/42/303579/samsung-galaxy-a14-4g-tim-1.jpg" >
                             <br>
                             <br>
@@ -128,7 +131,7 @@
 
     <div class="content1">
         <div class="scrollable-content">
-            <a href="https://www.samsung.com/vn/" target="_blank">
+            <a href="https://www.google.com" target="_blank">
                 <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:595:0/q:80/plain/https://dashboard.cellphones.com.vn/storage/sac-cap-thang-11-02-update.png" alt="Clickable Image1" class="clickable-image1">
             </a>
             <br>
@@ -223,6 +226,33 @@
                                 <div class="discount-price">3.490.000đ</div>
                             </a>
                             </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="tai-nghe1.php">
+                            <div class="warpper-group-category" data-index='2'>
+                                <img src="https://cdn.tgdd.vn/Products/Images/54/264068/nhet-tai-samsung-ia500-den-2-1.jpg"   style="height:429px" >
+                                <br>
+                                <br>
+                                <a>Tai nghe Có Dây Samsung IA500</a>
+                                <br>
+                                <br>
+                                <div class="discount-price"> 280.000đ</div>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="tai-nghe2.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/54/286045/tai-nghe-bluetooth-true-wireless-galaxy-buds2-pro-den-1.jpg" style="height:429px" >
+                            <br>
+                            <br>
+                            <a>Tai nghe Bluetooth True Wireless Samsung Galaxy Buds 2 Pro R510N</a>
+                            <br>
+                            <div class="discount-price"> 3.490.000đ</div>
+                        </a>
+                        </div>
                     </td>
                 </tr>
             </table>
