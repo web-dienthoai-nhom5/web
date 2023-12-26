@@ -1,73 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Đăng nhập</title>
-</head>
-<body>
+<form action="login.php" method="post">
+  <input type="text" name="username" placeholder="Tên đăng nhập">
+  <input type="password" name="password" placeholder="Mật khẩu">
+  <input type="submit" value="Đăng nhập">
+</form>
 
-  <h1>Đăng nhập</h1>
-
-  <form action="dangnhap.php" method="post">
-
-    <div class="form-group">
-      <label for="username">Tên đăng nhập</label>
-      <input type="text" name="username" id="username" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label for="password">Mật khẩu</label>
-      <input type="password" name="password" id="password" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Đăng nhập</button>
-
-  </form>
-
-</body>
-</html>
 
 <?php
 
-// Kiểm tra quyền đăng nhập
-if (isset($_POST["username"]) && isset($_POST["password"])) {
-  $username = $_POST["username"];
-  $password = $_POST["password"];
+// Lấy thông tin tên đăng nhập và mật khẩu từ form
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-  // Kiểm tra trong bảng admin
-  $sql = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+// Kiểm tra xem thông tin đăng nhập có hợp lệ hay không
+$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$result = mysqli_query($conn, $sql);
 
-  $result = $conn->query($sql);
+if (mysqli_num_rows($result) == 1) {
+  // Thông tin đăng nhập hợp lệ
 
-  // Nếu người dùng là admin
-  if ($result->num_rows > 0) {
-    // Chuyển hướng đến trang của admin
-    header("Location: admin.php");
-  } else {
-    // Kiểm tra trong bảng users
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+  // Tạo session cho người dùng
+  session_start();
+  $_SESSION['username'] = $username;
 
-    $result = $conn->query($sql);
+  // Chuyển hướng người dùng đến trang chủ
+  header("Location: index.php");
+} else {
+  // Thông tin đăng nhập không hợp lệ
 
-    // Nếu người dùng tồn tại
-    if ($result->num_rows > 0) {
-      // Đăng nhập bình thường
-      $row = $result->fetch_assoc();
-
-      // Đặt thông tin người dùng vào session
-      $_SESSION["username"] = $row["username"];
-      $_SESSION["is_admin"] = $row["is_admin"];
-
-      // Chuyển hướng đến trang chủ
-      header("Location: index.php");
-    } else {
-      // Người dùng không tồn tại
-      echo "Tài khoản hoặc mật khẩu không chính xác";
-    }
-  }
-
-  // Đóng kết nối
-  $conn->close();
+  echo "Thông tin đăng nhập không hợp lệ";
 }
 
 ?>
