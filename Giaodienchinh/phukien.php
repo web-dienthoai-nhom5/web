@@ -74,6 +74,30 @@
                         </a>
                         </div>
                     </td>
+                     <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="tai-nghe3.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/54/201517/tai-nghe-ep-mozard-ds510-wb-xanh-up-1-org.jpg" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Tai nghe Có Dây Mozard DS510-WB</a>
+                            <br>
+                            <div class="discount-price"> 75.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="tai-nghe4.php">
+                            <img src="htthttps://cdn.tgdd.vn/Products/Images/54/248455/samsung-galaxy-buds-2-r177n-trang-1.jpg" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Tai nghe Bluetooth True Wireless Samsung Galaxy Buds 2 R177</a>
+                            <br>
+                            <div class="discount-price"> 2.990.000đ</div>
+                        </a>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </section>
@@ -87,13 +111,13 @@
         <section>
         <div class="accessory-type capsac" style="background-color:#B5292D!important;">
                <div class="xem">
-                    <a href="sac-cap.php" class="see-all hide"><span>Xem tất cả phụ kiện  </span><i class="fa-solid fa-play"></i></a>
+                    <a href="cap-sac.php" class="see-all hide"><span>Xem tất cả phụ kiện  </span><i class="fa-solid fa-play"></i></a>
                 </div>
              <table>
                 <tr>
                     <td>
                         <div class="bgw-type">
-                        <a data-cate="-9" data-place="7005" rel="nofollow" href="sac-cap.php" onclick="jQuery.ajax({ url: '/bannertracking?bid=73381&r='+ (new Date).getTime(), async: true, cache: false });"><img style="cursor:pointer" src="https://cdn.tgdd.vn/2023/11/banner/400x400-400x400-1.png" alt="Cáp Sạc" width="400" height="400"></a>               
+                        <a data-cate="-9" data-place="7005" rel="nofollow" href="cap-sac.php" onclick="jQuery.ajax({ url: '/bannertracking?bid=73381&r='+ (new Date).getTime(), async: true, cache: false });"><img style="cursor:pointer" src="https://cdn.tgdd.vn/2023/11/banner/400x400-400x400-1.png" alt="Cáp Sạc" width="400" height="400"></a>               
                         </div>
                     </td>
                     <td>
@@ -122,12 +146,33 @@
                     <td>
                         <div class="warpper-group-category" data-index='2'>
                         <a href="cap-sac3.php">
-                            <img class='img'  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/c/u/cu-sac-nhanh-samsung-ep-ta210-2-cong-35w-3.jpg"  style="width:70%; border-radius: 50px;">
+                            <img class='img'  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_121_2.png"  style="width:70%; border-radius: 50px;">
                             <br>
                             <a>Củ sạc Samsung 2 cổng 35W </a>
+                            <br><br>
+                            <div class="discount-price"> 1.190.200đ</div>
+                        </a>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="cap-sac4.php">
+                            <img class='img'  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:80/plain/https://cellphones.com.vn/media/catalog/product/c/u/cu-sac-nhanh-samsung-ep-ta210-2-cong-35w-3.jpg"  style="width:70%; border-radius: 50px;">
                             <br>
+                            <a> Củ sạc nhanh Samsung 25W không kèm cáp (EP-T2510NBEGWW) </a>
+                            <br><br>
+                             <div class="discount-price"> 440.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="cap-sac5.php">
+                            <img class='img'  src="https://www.phukiensamsung.com/Uploads/big_de-sac-khong-day-samsung-galaxy-s6-edge-plus-chinh-hang.jpg"  style="width:70%; border-radius: 50px;">
                             <br>
-                            <a>Giá liên hệ</a>
+                            <a> Đế sạc nhanh không dây Samsung Galaxy S6 Edge Plus </a>
+                            <br><br>
+                            <div class="discount-price"> 950.000đ</div>
                         </a>
                         </div>
                     </td>
@@ -137,6 +182,88 @@
         </section>
     </div>
 
+<h2><b>ỐP LƯNG, BAO DA</b></h2>
+    <div class="block v2" id="op-lung">
+        <section>
+            <div class="accessory-type tainghe" style="background-color:#b5292d!important;">
+                <div class="xem">
+                    <a href="op-lung.php" class="see-all hide"><span>Xem tất cả phụ kiện  </span><i class="fa-solid fa-play"></i></a>
+                </div>
+            <table>
+                <tr>
+                    <td>
+                        <div class="bgw-type">
+                        <a data-cate="-9" data-place="7006" rel="nofollow" href="op-lung.php" onclick="jQuery.ajax({ url: '/bannertracking?bid=73382&r='+ (new Date).getTime(), async: true, cache: false });"><img style="cursor:pointer" src="https://cdn.tgdd.vn/2023/11/banner/Long---tai-nghe-400-400-400x400.png" alt="Tai Nghe" width="400" height="400"> </a>                        
+                        </div>
+                    </td>
+                    <td>
+                        <a href="op-lung1.php">
+                            <div class="warpper-group-category" data-index='2'>
+                                <img src="https://cdn.tgdd.vn/Products/Images/60/312390/op-lung-galaxy-z-fold5-nhua-cung-samsung-linh-hoat-trong-5.jpg"   style="width:50%; border-radius: 50px;"  >
+                                <br>
+                                <br>
+                                <a>Ốp lưng Galaxy Z Fold5 Nhựa cứng Samsung Linh hoạt</a>
+                                <br>
+                                <br>
+                                <div class="discount-price"> 960.000đ</div>
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="op-lung2.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/60/317090/op-lung-galaxy-s23-fe-nhua-cung-pc-samsung-linh-hoat-trong-1.jpg'" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Ốp lưng Galaxy S23 FE Nhựa cứng PC Samsung Linh hoạt</a>
+                            <br>
+                            <div class="discount-price"> 800.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="op-lung3.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/60/317218/op-lung-galaxy-m54-5g-nhua-cung-vien-deo-pure-ii-jm-1.jpg" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Ốp lưng Galaxy M54 5G Nhựa cứng viền dẻo Pure II JM</a>
+                            <br>
+                            <div class="discount-price"> 200.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="op-lung4.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/60/317086/op-lung-galaxy-s23-fe-silicone-samsung-den-1.jpg" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Ốp lưng Galaxy S23 FE Silicone Samsung</a>
+                            <br>
+                            <div class="discount-price"> 700.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                     <td>
+                        <div class="warpper-group-category" data-index='2'>
+                        <a href="op-lung5.php">
+                            <img src="https://cdn.tgdd.vn/Products/Images/60/317083/bao-da-galaxy-s23-fe-samsung-thong-minh-den-1.jpg" class='img'    style="width:50%; border-radius: 50px;" >
+                            <br>
+                            <br>
+                            <a>Bao da Galaxy S23 FE Samsung Thông minh</a>
+                            <br>
+                            <div class="discount-price"> 1.000.000đ</div>
+                        </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br>
+        <br>
+        <br>
+    </div>  
 
     <style>
         h3{
