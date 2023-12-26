@@ -193,7 +193,7 @@
                 <tr>
                     <td>
                         <div class="bgw-type">
-                        <a data-cate="-9" data-place="7006" rel="nofollow" href="op-lung.php" onclick="jQuery.ajax({ url: '/bannertracking?bid=73382&r='+ (new Date).getTime(), async: true, cache: false });"><img style="cursor:pointer" src="https://cdn.tgdd.vn/2023/11/banner/Long---tai-nghe-400-400-400x400.png" alt="Tai Nghe" width="400" height="400"> </a>                        
+                        <a data-cate="-9" data-place="7006" rel="nofollow" href="op-lung.php" onclick="jQuery.ajax({ url: '/bannertracking?bid=73382&r='+ (new Date).getTime(), async: true, cache: false });"><img style="cursor:pointer" src="https://cdn.tgdd.vn/2023/12/campaign/Artboard-2-640x675.png" alt="Tai Nghe" width="400" height="400"> </a>                        
                         </div>
                     </td>
                     <td>
