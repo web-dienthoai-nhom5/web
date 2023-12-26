@@ -26,11 +26,13 @@
 
 </body>
 </html>
+<?php include "header.php"?>
 
 <?php
 
 include "connect.php";
 
+session_start();
 // Kiểm tra quyền đăng nhập
 if (isset($_POST["username"]) && isset($_POST["password"])) {
   $username = $_POST["username"];
@@ -61,7 +63,7 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       $_SESSION["is_admin"] = $row["is_admin"];
 
       // Chuyển hướng đến trang chủ
-      header("Location: index.php");
+      header("Location: trangchu.php");
     } else {
       // Người dùng không tồn tại
       echo "Tài khoản hoặc mật khẩu không chính xác";
@@ -73,3 +75,4 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
 }
 
 ?>
+<?php include "footer.php"?>
